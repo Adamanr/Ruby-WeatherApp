@@ -1,0 +1,25 @@
+
+  <ul class="parent">
+  <li class="child">
+      <p style="color: white;">Город:</p>
+    <form>
+      <%= text_field_tag(:city) %>
+    </form>
+  </li>
+  <% begin %>
+  <li class="child" style="padding-top: 1em">
+    <%= @name %>
+    <% if @maxTemp == @minTemp %>
+      <p style="font-size: 0.5em">Максимальная и температура не работают в данном регионе</p>
+    <% else %>
+      <%= @temp %><br>
+      <%= @text %>
+    <% end %>
+
+  </li>
+  <% rescue AnotherTypeOfException %>
+    <%= @e %>
+  <% end %>
+
+</ul>
+
